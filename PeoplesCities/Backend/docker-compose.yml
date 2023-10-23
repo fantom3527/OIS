@@ -1,0 +1,61 @@
+version: "3.9"
+networks:
+    peoples-cities-dev:
+        driver: bridge
+services:
+    app: 
+        container_name: peoples-cities-dev
+        build: 
+            context: .
+            dockerfile: Dockerfile    
+        ports:
+            - "7246:80"
+        networks:
+            - peoples-cities-dev
+        depends_on:
+            - postgres_db
+            - wiremock  
+
+    postgres_db:
+        container_name: postgres
+        image: postgres:latest
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: 123
+            POSTGRES_DB: testpeoplescities
+        ports:
+            - "5432:5432"
+        networks:
+            - peoples-cities-dev
+        volumes:
+            - postgres-data:/var/lib/postgresql/data
+            
+    pgadmin:
+        container_name: pgadmin
+        image: dpage/pgadmin4
+        environment:
+            PGADMIN_DEFAULT_EMAIL: pumpum@gmail.com
+            PGADMIN_DEFAULT_PASSWORD: root
+        volumes:
+            - pgadmin-data:/var/lib/pgadmin
+        ports:
+            - "5050:80"
+        restart: unless-stopped
+        networks:
+            - peoples-cities-dev
+        depends_on:
+            - postgres_db
+
+    wiremock:
+        container_name: wiremock
+        image: wiremock/wiremock
+        ports:
+            - "808:8080"      
+        volumes:  
+            - ./Docker/WireMock:/home/wiremock
+        restart: unless-stopped
+        networks:
+            - peoples-cities-dev
+volumes:
+    postgres-data:
+    pgadmin-data:

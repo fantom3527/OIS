@@ -1,0 +1,13 @@
+{
+	"request": {
+		"method": "GET",
+		"url": "/test/weather/f278d99c-2876-4bfd-b6b9-1b901bed4267"
+	},
+	"response": {
+		"status": 200,
+		"body": "{\"temperature\": \"23\", \"description\": \"very sunny\"}",
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	}
+}
