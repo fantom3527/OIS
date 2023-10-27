@@ -1,0 +1,14 @@
+version: "3.9"
+networks:
+    peoples-cities-dev:
+        driver: bridge
+services:
+    identity:
+        container_name: peoples-cities-identity
+        build: 
+            context: .
+            dockerfile: Dockerfile    
+        ports:
+            - "7088:80"
+        networks:
+            - peoples-cities-dev

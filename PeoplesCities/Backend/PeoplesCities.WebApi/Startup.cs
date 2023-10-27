@@ -48,7 +48,10 @@ namespace PeoplesCities.WebApi
                 config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer("Bearer", options =>
                {
+                   // При обычном запуске приложения:
                    options.Authority = "https://localhost:7088/";
+                   // При исользовании контейнеров Docker:
+                   options.Authority = "http://localhost:7088/";
                    options.Audience = "PeoplesCitiesWebAPI";
                    options.RequireHttpsMetadata = false;
                });

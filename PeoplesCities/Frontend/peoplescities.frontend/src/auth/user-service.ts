@@ -6,7 +6,10 @@ const userManagerSettings: UserManagerSettings = {
     redirect_uri: 'http://localhost:3000/signin-oidc',
     response_type: 'code',
     scope: 'openid profile PeoplesCitiesWebAPI',
-    authority: 'https://localhost:7088/',
+    // При обычном запуске приложения:
+    //authority: 'https://localhost:7088/',
+    // При исользовании контейнеров Docker:
+    authority: 'http://localhost:7088/',
     post_logout_redirect_uri: 'http://localhost:3000/signout-oidc',
 };
 

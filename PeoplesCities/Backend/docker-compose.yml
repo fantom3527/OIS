@@ -9,7 +9,7 @@ services:
             context: .
             dockerfile: Dockerfile    
         ports:
-            - "7246:80"
+            - "7247:80"
         networks:
             - peoples-cities-dev
         depends_on:

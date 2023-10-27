@@ -2,7 +2,10 @@ import React, { FC, ReactElement, useRef, useEffect, useState } from 'react';
 import { CreateCityDto, Client, CityLookupDto } from '../api/api';
 import { FormControl } from 'react-bootstrap';
 
-const apiClient = new Client('https://localhost:7247');
+// При обычном запуске приложения:
+//const apiClient = new Client('https://localhost:7247');
+// При исользовании контейнеров Docker:
+const apiClient = new Client('http://localhost:7247');
 
 
 async function createCity(city: CreateCityDto) {
