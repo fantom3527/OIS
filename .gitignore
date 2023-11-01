@@ -241,6 +241,8 @@ ClientBin/
 *.pfx
 *.publishsettings
 orleans.codegen.cs
+*.db-shm
+*.db-wal
 
 # Including strong name files can present a security risk
 # (https://github.com/github/gitignore/pull/2483#issue-259490424)
@@ -362,6 +364,9 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Others folder
+LogFiles/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd

@@ -13,7 +13,7 @@ namespace PeoplesCities.Persistence.EntityTypeConfigurations
             builder.Property(city => city.Id).HasColumnName("Id"); 
             builder.Property(city => city.Name).HasColumnName("Name").HasMaxLength(50).IsRequired(); 
             builder.Property(city => city.Description).HasColumnName("Description").HasMaxLength(250);
-            builder.Property(city => city.Ts).HasColumnName("TS").HasDefaultValueSql("now()");
+            builder.Property(city => city.Ts).HasColumnName("TS").HasDefaultValueSql("CURRENT_TIMESTAMP");
         }
     }
 }
