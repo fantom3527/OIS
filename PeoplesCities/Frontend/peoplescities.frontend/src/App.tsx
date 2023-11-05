@@ -1,4 +1,4 @@
-import { FC, ReactElement } from 'react';
+import { FC, ReactElement, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import userManager, { loadUser, signinRedirect } from './auth/user-service';
@@ -8,7 +8,27 @@ import SignOutOidc from './auth/SignoutOidc';
 import CityList from './features/CityList';
 
 const App: FC<{}> = (): ReactElement => {
-  loadUser();
+
+  const [isUserLoad, setIsUserLoad] = useState(false);
+
+  useEffect(() => {
+    const userLoadedHandler = () => {
+      setIsUserLoad(true);
+    };
+
+    userManager.events.addUserLoaded(userLoadedHandler);
+
+    return () => {
+      userManager.events.removeUserLoaded(userLoadedHandler);
+    };
+  }, []);
+
+  useEffect(() => {
+    loadUser().then(result => {
+      setIsUserLoad(result);
+    });
+  }, []);
+  
   return (
     <div className="App">
     <header className="App-header">
@@ -16,7 +36,7 @@ const App: FC<{}> = (): ReactElement => {
         <AuthProvider userManager={userManager}>
             <Router>
                 <Routes>
-                    <Route path="/" element={<CityList/>} />
+                    <Route path="/" element={<CityList isUserLoad = {isUserLoad}/>} />
                     <Route
                         path="/signout-oidc"
                         element={<SignOutOidc/>}

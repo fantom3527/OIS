@@ -7,13 +7,16 @@ import { FormControl } from 'react-bootstrap';
 // При исользовании контейнеров Docker:
 const apiClient = new Client('http://localhost:7247');
 
+type CityListProps = {
+    isUserLoad: boolean;
+}
 
 async function createCity(city: CreateCityDto) {
     await apiClient.create('1.0', city);
     console.log('City is created.');
 }
 
-const CityList: FC<{}> = (): ReactElement => {
+const CityList: FC<CityListProps> = ({isUserLoad: userLoaded}): ReactElement => {
     let textInput = useRef(null);
     const [cities, setCities] = useState<CityLookupDto[] | undefined>(undefined);
 
@@ -23,8 +26,10 @@ const CityList: FC<{}> = (): ReactElement => {
     }
 
     useEffect(() => {
-        setTimeout(getCities, 500);
-    }, []);
+        if (userLoaded) {
+            setTimeout(getCities, 500);
+        }
+    }, [userLoaded]);
 
     const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {

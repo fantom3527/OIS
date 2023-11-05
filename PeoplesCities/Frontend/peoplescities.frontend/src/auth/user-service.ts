@@ -14,11 +14,24 @@ const userManagerSettings: UserManagerSettings = {
 };
 
 const userManager = new UserManager(userManagerSettings);
-export async function loadUser() {
-    const user = await userManager.getUser();
-    console.log('User: ', user);
-    const token = user?.access_token;
-    setAuthHeader(token);
+
+export async function loadUser(): Promise<boolean> {
+    try {
+        const user = await userManager.getUser();
+        console.log('User: ', user);
+        const token = user?.access_token;
+        setAuthHeader(token);
+        
+        if (token) {
+            return true;
+        }
+        return false;
+    }
+    catch (error) {
+        console.error('Failed to load user', error);
+
+        return false;
+    }
 }
 
 export const signinRedirect = () => userManager.signinRedirect();
