@@ -9,6 +9,8 @@
 Проект состоит из 3х частей: Frontend, Identity Server, Web Api.
 В качестве БД - PostgreSQL, SQLite.
 
+Сущности City и User реализуют CRUD. Wheather симулирует сервис погоды через моки (Wiremock)
+
 В Docker поднято:
 * Web Api 
 * PostgeSQL
