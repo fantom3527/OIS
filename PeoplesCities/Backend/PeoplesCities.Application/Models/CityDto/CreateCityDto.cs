@@ -2,7 +2,7 @@
 using PeoplesCities.Application.Common.Mapping;
 using PeoplesCities.Application.Features.Cities.Command.CreateCity;
 
-namespace PeoplesCities.WebApi.Models.CityDto
+namespace PeoplesCities.Application.Models.CityDto
 {
     public class CreateCityDto : IMapWith<CreateCityCommand>
     {

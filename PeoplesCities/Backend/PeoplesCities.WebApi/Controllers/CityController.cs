@@ -7,7 +7,7 @@ using PeoplesCities.Application.Features.Cities.Command.DeleteCity;
 using PeoplesCities.Application.Features.Cities.Command.UpdateCity;
 using PeoplesCities.Application.Features.Cities.Queries.GetCityDetails;
 using PeoplesCities.Application.Features.Cities.Queries.GetCityList;
-using PeoplesCities.WebApi.Models.CityDto;
+using PeoplesCities.Application.Models.CityDto;
 
 namespace PeoplesCities.WebApi.Controllers
 {
@@ -97,6 +97,7 @@ namespace PeoplesCities.WebApi.Controllers
         /// <remarks>
         /// PUT /city
         /// {
+        ///     id: "City id"
         ///     name: "city name"
         ///     description: "city description"
         /// }

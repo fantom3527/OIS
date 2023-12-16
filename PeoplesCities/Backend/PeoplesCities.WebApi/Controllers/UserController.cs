@@ -6,7 +6,7 @@ using PeoplesCities.Application.Features.Users.Commands.DeleteUser;
 using PeoplesCities.Application.Features.Users.Commands.UpdateUser;
 using PeoplesCities.Application.Features.Users.Queries.GetUserDetails;
 using PeoplesCities.Application.Features.Users.Queries.GetUserList;
-using PeoplesCities.WebApi.Models.UserDto;
+using PeoplesCities.Application.Models.UserDto;
 
 namespace PeoplesCities.WebApi.Controllers
 {
