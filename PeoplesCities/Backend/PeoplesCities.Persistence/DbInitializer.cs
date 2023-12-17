@@ -1,4 +1,6 @@
-﻿namespace PeoplesCities.Persistence
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace PeoplesCities.Persistence
 {
     public class DbInitializer
     {
@@ -8,7 +10,7 @@
         /// <param name="context"></param>
         public static void Initialize(PeoplesCitiesDbContext context)
         {
-            context.Database.EnsureCreated();
+            context.Database.Migrate();
         }
     }
 }

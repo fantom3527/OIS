@@ -14,14 +14,14 @@ namespace PeoplesCities.Application.Features.Users.Commands.DeleteUser
 
         public async Task<Unit> Handle(DeleteUserCommand requst, CancellationToken cancellationToken)
         {
-            var entity = await _dbcontext.Users.FindAsync(new object[] { requst.Id }, cancellationToken);
+            var entity = await _dbcontext.User.FindAsync(new object[] { requst.Id }, cancellationToken);
 
             if (entity == null || entity.Id != requst.Id)
             {
                 throw new NotFoundException(nameof(User), requst.Id);
             }
 
-            _dbcontext.Users.Remove(entity);
+            _dbcontext.User.Remove(entity);
             await _dbcontext.SaveChangesAsync(cancellationToken);
 
             return Unit.Value;

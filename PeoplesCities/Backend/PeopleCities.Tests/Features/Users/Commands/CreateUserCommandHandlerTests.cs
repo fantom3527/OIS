@@ -30,7 +30,7 @@ namespace PeopleCities.Tests.Features.Users.Commands
             CancellationToken.None);
 
             // Assert - Проверка результата.
-            Assert.NotNull(await dbContext.Users.SingleOrDefaultAsync(user =>
+            Assert.NotNull(await dbContext.User.SingleOrDefaultAsync(user =>
                                       user.Id == userId && 
                                       user.CityId == cityId &&
                                       user.Name == userName &&

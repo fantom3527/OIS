@@ -31,7 +31,7 @@ namespace PeopleCities.Tests.Features.Users.Commands
             }, CancellationToken.None);
 
             // Assert
-            Assert.NotNull(await dbContext.Users.SingleOrDefaultAsync(user =>
+            Assert.NotNull(await dbContext.User.SingleOrDefaultAsync(user =>
                 user.Id == UserTestData.UserIdForUpdate &&
                 user.CityId == cityId &&
                 user.Name == updatedName &&

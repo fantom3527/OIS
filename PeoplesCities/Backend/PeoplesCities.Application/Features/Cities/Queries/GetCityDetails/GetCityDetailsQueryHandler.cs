@@ -16,7 +16,7 @@ namespace PeoplesCities.Application.Features.Cities.Queries.GetCityDetails
 
         public async Task<CityDetailsVm> Handle(GetCityDetailsQuery requst, CancellationToken cancellationToken)
         {
-            var entity = await _dbContext.Cities.FirstOrDefaultAsync(city => city.Id == requst.Id, cancellationToken);
+            var entity = await _dbContext.City.FirstOrDefaultAsync(city => city.Id == requst.Id, cancellationToken);
 
             if (entity == null || entity.Id != requst.Id)
             {

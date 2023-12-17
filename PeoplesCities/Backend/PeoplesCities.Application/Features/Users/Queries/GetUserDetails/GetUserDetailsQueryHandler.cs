@@ -17,7 +17,7 @@ namespace PeoplesCities.Application.Features.Users.Queries.GetUserDetails
 
         public async Task<UserDetailsVm> Handle(GetUserDetailsQuery requst, CancellationToken cancellationToken)
         {
-            var entity = await _dbContext.Users.FirstOrDefaultAsync(user => user.Id == requst.Id, cancellationToken);
+            var entity = await _dbContext.User.FirstOrDefaultAsync(user => user.Id == requst.Id, cancellationToken);
 
             if (entity == null || entity.Id != requst.Id)
             {

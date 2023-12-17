@@ -23,7 +23,7 @@ namespace PeoplesCities.Application.Features.Users.Commands.CreateUser
                     Email = requst.User.Email,
                 };
 
-                await _dbContext.Users.AddAsync(user, cancellationToken);
+                await _dbContext.User.AddAsync(user, cancellationToken);
                 await _dbContext.SaveChangesAsync(cancellationToken);
 
                 return user.Id;

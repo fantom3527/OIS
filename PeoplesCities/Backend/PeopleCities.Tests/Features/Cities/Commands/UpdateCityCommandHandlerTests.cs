@@ -29,7 +29,7 @@ namespace PeopleCities.Tests.Features.Cities.Commands
             }, CancellationToken.None);
 
             // Assert
-            Assert.NotNull(await dbContext.Cities.SingleOrDefaultAsync(user =>
+            Assert.NotNull(await dbContext.City.SingleOrDefaultAsync(user =>
                 user.Id == CityTestData.CityIdForUpdate &&
                 user.Name == updatedName &&
                 user.Description == updatedDescription));

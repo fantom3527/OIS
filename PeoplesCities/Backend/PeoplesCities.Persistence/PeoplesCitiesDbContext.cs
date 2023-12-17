@@ -8,8 +8,8 @@ namespace PeoplesCities.Persistence
     //TODO: Изменить название PeoplesCitiesDbContext на AppDbContext
     public class PeoplesCitiesDbContext : DbContext, IPeoplesCitiesDbContext
     {
-        public DbSet<User> Users { get; set; }
-        public DbSet<City> Cities { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<City> City { get; set; }
 
         public PeoplesCitiesDbContext(DbContextOptions<PeoplesCitiesDbContext> options) 
             : base(options) { }

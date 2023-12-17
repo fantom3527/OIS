@@ -15,7 +15,7 @@ namespace PeoplesCities.Application.Features.Cities.Command.UpdateCity
 
         public async Task<Unit> Handle(UpdateCityCommand request, CancellationToken cancellationToken)
         {
-            var entity = await _dbcontext.Cities.FirstOrDefaultAsync(city => city.Id == request.City.Id, cancellationToken);
+            var entity = await _dbcontext.City.FirstOrDefaultAsync(city => city.Id == request.City.Id, cancellationToken);
 
             if (entity == null || entity.Id != request.City.Id)
             {

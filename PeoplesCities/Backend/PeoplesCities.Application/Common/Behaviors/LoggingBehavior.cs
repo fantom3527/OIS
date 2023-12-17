@@ -18,7 +18,7 @@ namespace PeoplesCities.Application.Common.Behaviors
             var requestName = typeof(TRequest).Name;
             var userId = _currentUserService.UserId;
 
-            Log.Information("Notes Request: {Name} {@UserId} {@Request}",
+            Log.Information("PeopleCities Request: {Name} {@UserId} {@Request}",
                 requestName, userId, request);
 
             var response = await next();

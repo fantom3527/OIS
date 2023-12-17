@@ -15,8 +15,8 @@ namespace PeopleCities.Tests.Common
             var context = new PeoplesCitiesDbContext(options);
 
             context.Database.EnsureCreated();
-            context.Cities.AddRange(CityTestData.Create());
-            context.Users.AddRange(UserTestData.Create());
+            context.City.AddRange(CityTestData.Create());
+            context.User.AddRange(UserTestData.Create());
             context.SaveChanges();
 
             return context;

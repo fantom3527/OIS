@@ -5,8 +5,8 @@ namespace PeoplesCities.Application.Interfaces
 {
     public interface IPeoplesCitiesDbContext
     {
-        DbSet<User> Users { get; set; }
-        DbSet<City> Cities { get; set; }
+        DbSet<User> User { get; set; }
+        DbSet<City> City { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }

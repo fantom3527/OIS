@@ -20,7 +20,7 @@ namespace PeoplesCities.Application.Features.Users.Commands.UpdateUser
 
         public async Task<Unit> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
-            var entity = await _dbcontext.Users.FirstOrDefaultAsync(user => user.Id == request.User.Id, cancellationToken);
+            var entity = await _dbcontext.User.FirstOrDefaultAsync(user => user.Id == request.User.Id, cancellationToken);
 
             if (entity == null || entity.Id != request.User.Id)
             {

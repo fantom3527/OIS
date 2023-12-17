@@ -19,7 +19,6 @@ namespace PeoplesCities.WebApi
                 try
                 {
                     var context = serviceProvider.GetRequiredService<PeoplesCitiesDbContext>();
-                    //WeatherStub.ConfigureStub();
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception exception)
@@ -37,9 +36,5 @@ namespace PeoplesCities.WebApi
                 {
                     webBuilder.UseStartup<Startup>();
                 });
-            //    .ConfigureAppConfiguration((hostingContext, config) =>
-            //     {
-            //config.AddJsonFile("appsettings.json", optional: true);
-            //      });
     }
 }

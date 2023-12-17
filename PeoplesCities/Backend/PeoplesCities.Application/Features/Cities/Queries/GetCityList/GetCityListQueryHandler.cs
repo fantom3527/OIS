@@ -18,7 +18,7 @@ namespace PeoplesCities.Application.Features.Cities.Queries.GetCityList
 
         public async Task<CityListVm> Handle(GetEmptyQuery _, CancellationToken cancellationToken)
         {
-            var citiesQuery = await _dbcontext.Cities.ProjectTo<CityLookupDto>(_mapper.ConfigurationProvider)
+            var citiesQuery = await _dbcontext.City.ProjectTo<CityLookupDto>(_mapper.ConfigurationProvider)
                                                      .ToListAsync(cancellationToken);
 
             return new CityListVm { Cities = citiesQuery };

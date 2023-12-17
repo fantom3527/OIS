@@ -19,7 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeoplesCities.WebApi", "Peo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{977A8D5A-EDA4-4EB8-B04B-177CEC9BB101}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleCities.Tests", "PeopleCities.Tests\PeopleCities.Tests.csproj", "{196588E6-0D4E-4435-A265-1CB742FD0AF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeopleCities.Tests", "PeopleCities.Tests\PeopleCities.Tests.csproj", "{196588E6-0D4E-4435-A265-1CB742FD0AF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrations", "Migrations", "{AEC1334A-E91C-4C1B-BF8A-1F27C32DACE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeoplesCities.PostgreSql", "PeoplesCities.PostgreSql\PeoplesCities.PostgreSql.csproj", "{33FCAF84-966B-4F23-BFF1-2303B9AADD51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeoplesCities.Sqlite", "PeoplesCities.Sqlite\PeoplesCities.Sqlite.csproj", "{5882DFCA-C7CC-423D-AC8E-E1A2FD2E7083}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +53,14 @@ Global
 		{196588E6-0D4E-4435-A265-1CB742FD0AF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{196588E6-0D4E-4435-A265-1CB742FD0AF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{196588E6-0D4E-4435-A265-1CB742FD0AF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33FCAF84-966B-4F23-BFF1-2303B9AADD51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33FCAF84-966B-4F23-BFF1-2303B9AADD51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33FCAF84-966B-4F23-BFF1-2303B9AADD51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33FCAF84-966B-4F23-BFF1-2303B9AADD51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5882DFCA-C7CC-423D-AC8E-E1A2FD2E7083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5882DFCA-C7CC-423D-AC8E-E1A2FD2E7083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5882DFCA-C7CC-423D-AC8E-E1A2FD2E7083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5882DFCA-C7CC-423D-AC8E-E1A2FD2E7083}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +71,8 @@ Global
 		{2AE5CD21-8A0E-4EE2-ACE3-B8D1E7EDB631} = {7EC3A59A-B9BE-4F2D-AE10-FE2F3FAD1018}
 		{D42B69DB-5572-44CA-9D3A-471F1A658D31} = {D2537B19-AE1E-4445-BAF8-1989064F5799}
 		{196588E6-0D4E-4435-A265-1CB742FD0AF9} = {977A8D5A-EDA4-4EB8-B04B-177CEC9BB101}
+		{33FCAF84-966B-4F23-BFF1-2303B9AADD51} = {AEC1334A-E91C-4C1B-BF8A-1F27C32DACE6}
+		{5882DFCA-C7CC-423D-AC8E-E1A2FD2E7083} = {AEC1334A-E91C-4C1B-BF8A-1F27C32DACE6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {27E4DCAE-A2E1-43F9-BB58-B3B67C245FE6}

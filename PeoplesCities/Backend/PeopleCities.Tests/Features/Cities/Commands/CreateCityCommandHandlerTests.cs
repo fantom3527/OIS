@@ -28,7 +28,7 @@ namespace PeopleCities.Tests.Features.Cities.Commands
             CancellationToken.None);
 
             // Assert - Проверка результата.
-            Assert.NotNull(await dbContext.Cities.SingleOrDefaultAsync(city =>
+            Assert.NotNull(await dbContext.City.SingleOrDefaultAsync(city =>
                                       city.Id == cityId && city.Name == cityName &&
                                       city.Description == cityDescription));
         }

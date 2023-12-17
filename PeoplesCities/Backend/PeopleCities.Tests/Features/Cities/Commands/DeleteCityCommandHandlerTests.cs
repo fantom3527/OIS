@@ -20,7 +20,7 @@ namespace PeopleCities.Tests.Features.Cities.Commands
             }, CancellationToken.None);
 
             // Assert
-            Assert.Null(dbContext.Cities.SingleOrDefault(city =>
+            Assert.Null(dbContext.City.SingleOrDefault(city =>
                 city.Id == CityTestData.CityIdForDelete));
         }
 

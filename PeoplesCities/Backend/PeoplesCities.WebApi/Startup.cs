@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using PeoplesCities.Application;
 using PeoplesCities.Application.Common.Mapping;
@@ -25,6 +26,27 @@ namespace PeoplesCities.WebApi
             {
                 config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
                 config.AddProfile(new AssemblyMappingProfile(typeof(IPeoplesCitiesDbContext).Assembly));
+            });
+
+            services.AddDbContext<PeoplesCitiesDbContext>(options =>
+            {
+                options.UseSnakeCaseNamingConvention();
+
+                var provider = Configuration.GetValue("provider", Provider.Sqlite.Name);
+                if (provider == Provider.Sqlite.Name)
+                {
+                    options.UseSqlite(
+                        Configuration.GetConnectionString(Provider.Sqlite.Name)!,
+                        x => x.MigrationsAssembly(Provider.Sqlite.Assembly)
+                    );
+                }
+                if (provider == Provider.PostgreSql.Name)
+                {
+                    options.UseNpgsql(
+                        Configuration.GetConnectionString(Provider.PostgreSql.Name)!,
+                        x => x.MigrationsAssembly(Provider.PostgreSql.Assembly)
+                    );
+                }
             });
 
             services.AddApplication();

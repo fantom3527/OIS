@@ -16,7 +16,7 @@ namespace PeoplesCities.Application.Features.Users.Queries.GetUserList
 
         public async Task<UserListVm> Handle(GetUserListQuery requst, CancellationToken cancellationToken)
         {
-            var usersQuery = await _dbcontext.Users
+            var usersQuery = await _dbcontext.User
                 .Where(user => user.CityId == requst.CityId)
                 .ProjectTo<UserLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);

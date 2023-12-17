@@ -23,7 +23,7 @@ namespace PeoplesCities.Application.Features.Cities.Command.CreateCity
                     Description = requst.City.Description,
                 };
 
-                await _dbContext.Cities.AddAsync(city, cancellationToken);
+                await _dbContext.City.AddAsync(city, cancellationToken);
                 await _dbContext.SaveChangesAsync(cancellationToken);
 
                 return city.Id;
